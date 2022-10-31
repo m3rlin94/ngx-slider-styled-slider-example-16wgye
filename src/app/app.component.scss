@@ -1,0 +1,86 @@
+// We need to use ::ng-deep to overcome view encapsulation
+::ng-deep {
+  .custom-slider {
+    .ngx-slider {
+      .ngx-slider-bar {
+        height: 8px;
+        background: #e1e5ea;
+        border-radius: 100px;
+      }
+
+      .ngx-slider-selection {
+        background: black;
+      }
+
+      .ngx-slider-pointer {
+        background: #534ad8;
+        border-radius: 100px;
+        width: 10.38px;
+        height: 20px;
+        top: -6px;
+
+        &::after {
+          background: white;
+          border-radius: 100px;
+          width: 2.08px;
+          height: 8px;
+          left: 4.15px;
+          top: 6px;
+
+          :hover {
+            background-color: white;
+          }
+        }
+
+        &:focus-visible {
+          outline: #534ad8 solid 0.5px;
+        }
+
+        &.ngx-slider-active {
+          &::after {
+            background-color: white;
+          }
+        }
+      }
+
+      .ngx-slider-bubble {
+        bottom: 14px;
+      }
+
+      .ngx-slider-limit {
+        font-weight: bold;
+        color: orange;
+      }
+
+      .ngx-slider-tick {
+        width: 1px;
+        height: 10px;
+        margin-left: 4px;
+        border-radius: 0;
+        background: #ffe4d1;
+        top: -1px;
+
+        &.ngx-slider-selected {
+          background: orange;
+        }
+      }
+
+      .ngx-slider-floor {
+        display: none;
+      }
+
+      .ngx-slider-ceil {
+        display: none;
+      }
+
+      .ngx-slider-tick {
+        &:first-child {
+          display: none;
+        }
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
